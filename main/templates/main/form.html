@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+Форма
+{% endblock %}
+{% block content %}
+
+<div class="form">
+  <h3 align="center">Оставьте, пожалуйста, отзыв о сайте</h3>
+  <h4 align="center" style="color: #fff"> Ваше мнение важно для меня </h4>
+  <form method="post">
+      {% csrf_token %}
+    {{ form.company }}
+    {{ form.review }}
+    <span style="color: red; font-size:5px;">{{ error }}</span>
+
+      <input type="submit" class="btn btn-success" value="Отправить" style="background-color: #9400D3; border-color: #fff">
+  </form>
+
+</div>
+
+
+
+{% endblock %}
